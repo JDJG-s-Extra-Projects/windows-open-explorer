@@ -1,0 +1,5 @@
+shell:downloads
+shell:RecycleBinFolder
+Documents
+%userprofile%
+shell:My Music
