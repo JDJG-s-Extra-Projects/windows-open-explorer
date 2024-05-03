@@ -24,6 +24,10 @@ for dir in directories:
 		continue
 
 	Path = pathlib.PurePath(dir)
+
+	if not path.exists():
+		continue
+
 	# possibly not needed?
 	os.system(f"explorer {Path}")
 	time.sleep(2)
