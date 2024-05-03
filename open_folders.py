@@ -10,7 +10,7 @@ txt = ""
 current = pathlib.Path(__file__).absolute().parent
 file_location = f"{current}/{txt}"
 
-if not Pathlib.Path(file_location).exists():
+if not pathlib.Path(file_location).exists():
 	sys.exit(1)
 	# Best solution I found was closing the file before stuff is used
 
