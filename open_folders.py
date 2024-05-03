@@ -1,15 +1,21 @@
 import subprocess
 import os
+import sys
 import time
 import pathlib
 
 txt = ""
 # put your txt's name with the information in there.
 
-file_path = os.path.realpath(__file__)
-current_path = pathlib.PurePath(file_path)
-current = current_path.parent
-with open(f"{current}/{txt}") as file:
+current = pathlib.Path(__file__).absolute().parent
+file_location = f"{current}/{txt}"
+
+file_location = f"{current}/nice folders.txt"
+if not Pathlib.Path(file_location).exists():
+	sys.exit(1)
+	# Best solution I found was closing the file before stuff is used
+
+with open(file_location) as file:
 	directories = file.readlines() 
 
 for dir in directories:
@@ -19,6 +25,7 @@ for dir in directories:
 		continue
 
 	Path = pathlib.PurePath(dir)
+	# possibly not needed?
 	os.system(f"explorer {Path}")
 	time.sleep(2)
 	print(f"opened {Path}")
