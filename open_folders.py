@@ -10,7 +10,8 @@ txt = ""
 current = pathlib.Path(__file__).absolute().parent
 file_location = f"{current}/{txt}"
 
-if not Pathlib.Path(file_location).exists():
+if not pathlib.Path(file_location).exists():
+	print("file not found")
 	sys.exit(1)
 	# Best solution I found was closing the file before stuff is used
 
@@ -23,9 +24,9 @@ for dir in directories:
 		print(dir)
 		continue
 
-	Path = pathlib.PurePath(dir)
+	Path = pathlib.Path(dir)
 
-	if not path.exists():
+	if not Path.exists():
 		continue
 
 	# possibly not needed?
