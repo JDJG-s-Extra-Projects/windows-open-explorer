@@ -9,10 +9,8 @@ txt = ""
 
 current = pathlib.Path(__file__).absolute().parent
 file_location = f"{current}/{txt}"
-file_path = pathlib.Path(file_location)
 
-if not file_path.exists() or file_path.is_dir():
-	print("file not found")
+if not Pathlib.Path(file_location).exists():
 	sys.exit(1)
 	# Best solution I found was closing the file before stuff is used
 
@@ -25,11 +23,7 @@ for dir in directories:
 		print(dir)
 		continue
 
-	Path = pathlib.Path(dir)
-
-	if not Path.exists():
-		continue
-
+	Path = pathlib.PurePath(dir)
 	# possibly not needed?
 	os.system(f"explorer {Path}")
 	time.sleep(2)
