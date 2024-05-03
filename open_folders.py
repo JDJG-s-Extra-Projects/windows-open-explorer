@@ -9,8 +9,9 @@ txt = ""
 
 current = pathlib.Path(__file__).absolute().parent
 file_location = f"{current}/{txt}"
+file_path = pathlib.Path(file_location)
 
-if not pathlib.Path(file_location).exists():
+if not file_path.exists() or file_path.is_dir():
 	print("file not found")
 	sys.exit(1)
 	# Best solution I found was closing the file before stuff is used
